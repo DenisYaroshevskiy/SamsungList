@@ -6,6 +6,11 @@
 namespace Tools {
     /*
      * Boost is not particulary friendy with move semantics
+     *
+     * TODO: think, this optional has missdesigned forwarding
+     * constructor, if one is to write generic code
+     * and do smth like Optional<T>{std::forward<Args>(args)...}
+     * in case of zero args, there would be no value!
      */
 
     template <typename T>
